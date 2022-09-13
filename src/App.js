@@ -10,11 +10,11 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from"./pages/RegisterPage";
 import CartPage from "./pages/CartPage";
 import AdminPage from"./pages/AdminPage";
-import AdminProducts from "./components/AdminProducts";
-import AdminCategory from "./components/AdminCategory";
+import AdminProducts from "./components/productcomponent/AdminProducts";
+import AdminCategory from "./components/categorycomponent/AdminCategory";
 import AdminUser from "./components/AdminUser";
-import AddProduct from "./components/AddProduct";
-import AddCategory from "./components/AddCategory";
+import AddProduct from "./components/productcomponent/AddProduct";
+import AddCategory from "./components/categorycomponent/AddCategory";
 import UserHome from "./pages/UserHome";
 import ProtectedRoutes from "./utils/ProtectedRoutes";
 

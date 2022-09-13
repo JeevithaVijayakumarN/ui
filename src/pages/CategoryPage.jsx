@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-import AppBar from "../components/AppBar";
-
 import AppBody from "../components/AppBody";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -12,10 +10,10 @@ import Footer from "../components/Footer";
 import Title from "../components/Title";
 import CategoryItem from "../components/CategoryItem";
 
-import { products } from "../data/dummy";
 import AppUserBar from "../components/AppUserBar";
 import { useEffect } from "react";
 import groceryApi from "../api/grocery";
+
 
 const CategoryPage = () => {
   const [categories, setCategories] = useState([]);
@@ -34,7 +32,10 @@ const CategoryPage = () => {
         }
       })
       .catch((err) => console.log(err));
-  }, []);
+  },
+   []);
+   
+  
   return (
     <div>
       <>
