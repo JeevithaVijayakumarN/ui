@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 import groceryApi from "../api/grocery";
 
+
 const LoginComponent = () => {
   const navigate = useNavigate();
   const { setLoggedInUser } = useContext(UserContext);
@@ -36,6 +37,11 @@ const LoginComponent = () => {
 
   return (
     <div>
+       <div className='container mt-5'>
+        <div className='row'>
+          <div className='col-md-8 mx-auto'>
+            <h1>Login</h1>
+
       <form>
         <div className="mb-3">
           <input
@@ -69,6 +75,10 @@ const LoginComponent = () => {
         </button>
         {/* onClick={(event) => loginAPI(event)} */}
       </form>
+      </div>
+      </div>
+      </div>
+
     </div>
   );
 };

@@ -35,6 +35,7 @@ const UserHome = () => {
     <Carousels />
     <AppBody>
       <Container>
+      
         <Row>
           <Col>
             <Stack gap={3} className="mt-5">

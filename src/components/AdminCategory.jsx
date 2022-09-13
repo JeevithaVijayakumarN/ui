@@ -7,6 +7,13 @@ import{Link} from "react-router-dom";
 const AdminCategory = () => {
   return (
     <div>
+      <div className='container mt-5'>
+        <div className='row'>
+          <div className='col-md-8 mx-auto'>
+{/* 
+          </div>
+        </div>
+      </div> */}
         <h1>Category</h1><Link to={"/addcategories"}><Button variant="info">Add</Button></Link>
          <Table striped>
       <thead>
@@ -45,7 +52,11 @@ const AdminCategory = () => {
       <Button variant="light">Delete</Button>{' '}
         </tr>
       </tbody>
+      
     </Table>
+    </div>
+        </div>
+      </div>
     </div>
   )
 }

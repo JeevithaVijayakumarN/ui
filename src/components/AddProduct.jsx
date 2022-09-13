@@ -46,7 +46,7 @@ const AddProduct = () => {
     
     
     <div>
-            <Dropdown>
+      <Dropdown>
       <Dropdown.Toggle variant="success" id="dropdown-basic">
         Category
       </Dropdown.Toggle>

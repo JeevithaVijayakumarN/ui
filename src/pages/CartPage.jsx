@@ -6,7 +6,6 @@ import Col from "react-bootstrap/Col";
 
 import "../assets/images/css/cart.css";
 
-import AppBar from "../components/AppBar";
 import AppBody from "../components/AppBody";
 
 import { products } from "../data/dummy";

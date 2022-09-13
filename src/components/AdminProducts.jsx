@@ -5,8 +5,16 @@ import {Link} from "react-router-dom";
 const AdminProducts = () => {
   return (
     <div>
-        <h1>Products</h1><Link to={"/addproducts"}><Button variant="info">Add</Button></Link>
+       
+        <div className='container nt=5'>
+          <div className='row'>
+            <div className='col-md-8 mx-auto'>
+            <h1>Products</h1><Link to={"/addproducts"}><Button variant="info">Add</Button></Link>
+            {/* </div>
+          </div>
+        </div> */}
         <Table striped>
+
       <thead>
         <tr>
           <th>#</th>
@@ -40,9 +48,16 @@ const AdminProducts = () => {
           <Button variant="info">Edit</Button>
       <Button variant="light">Delete</Button>
         </tr>
+        
       </tbody>
+      
     </Table>
     </div>
+          </div>
+        </div>
+    
+    </div>
+    
   )
 }
 

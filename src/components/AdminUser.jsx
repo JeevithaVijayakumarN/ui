@@ -5,6 +5,10 @@ import Table from 'react-bootstrap/Table';
 const AdminUser = () => {
   return (
     <div>
+       <div className='container mt-5'>
+        <div className='row'>
+          <div className='col-md-8 mx-auto'>
+
         <h1>User</h1>
           <Table striped>
       <thead>
@@ -39,6 +43,9 @@ const AdminUser = () => {
         </tr>
       </tbody>
     </Table>
+    </div>
+    </div>
+    </div>
     </div>
   )
 }

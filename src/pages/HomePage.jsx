@@ -42,7 +42,7 @@ const HomePage = () => {
           <Row>
             <Col>
               <Stack gap={3} className="mt-5">
-                <Title title="Recommended Products" />
+                {/* <Title title="Recommended Products" /> */}
                 <Container>
                   <Row>
                     {products.map((product, index) => {

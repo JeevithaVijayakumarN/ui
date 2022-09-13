@@ -33,7 +33,14 @@ const RegisterComponent = () => {
   return (
     <div>
       <div>
+      <div className='container mt-5'>
+        <div className='row'>
+          <div className='col-md-8 mx-auto'>
+            <h2>Welcome to Grocery Shopping </h2>
+
+      
         <form>
+        <h3>Please register your details </h3>
           <div className="mb-3">
             <label className="form-label">Name</label>
             <input
@@ -63,7 +70,7 @@ const RegisterComponent = () => {
             <input
               type="text"
               className="form-control"
-              placeholder="User Name"
+              placeholder="Phone Number"
               value={register.phone}
               onChange={(event) => {
                 setRegister({ ...register, phone: event.target.value });
@@ -71,6 +78,7 @@ const RegisterComponent = () => {
             />
           </div>
           <div className="mb-3">
+          <label className="form-label">Password</label>
             <input
               type="password"
               className="form-control"
@@ -92,6 +100,9 @@ const RegisterComponent = () => {
             Registered? <Link to="/">Login</Link>
           </p>
         </form>
+        </div>
+        </div>
+        </div>
       </div>
     </div>
   );
