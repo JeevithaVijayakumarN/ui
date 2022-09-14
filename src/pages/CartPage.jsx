@@ -21,8 +21,16 @@ const CartPage = () => {
         <Container>
           <Row>
             <Col>
-              <div class="card cartCard mt-50 mb-50 bg-dark text-light">
-                <div class="title cardTitle mx-auto"> Thank you for your order! </div>
+            <div class="card cartCard mt-50 mb-50 bg-light text-dark">
+                <div class="title cardTitle mx-auto">
+            <h1>Thank you for your order!</h1>
+            </div>
+            </div>
+              {/* <div class="card cartCard mt-50 mb-50 bg-light text-dark">
+                <div class="title cardTitle mx-auto">
+                  {" "}
+                  Thank you for your order!{" "}
+                </div>
                 <div class="main">
                   <span id="sub-title">
                     <p>
@@ -79,13 +87,14 @@ const CartPage = () => {
                     </button>
                   </div>
                 </div>
-              </div>
+              </div> */}
+              
+                 
             </Col>
           </Row>
         </Container>
       </AppBody>
     </div>
-  )
-                         
-}
+  );
+};
 export default CartPage;

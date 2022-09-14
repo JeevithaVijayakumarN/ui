@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-
+import React, { useEffect, useState } from "react";
 
 import AppBody from "../components/AppBody";
 import Container from "react-bootstrap/Container";
@@ -7,20 +6,17 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Stack from "react-bootstrap/Stack";
 
-
-
-
 import ProductItem from "../components/ProductItem";
 
-
 import Footer from "../components/Footer";
-import AppUserBar from '../components/AppUserBar';
-import groceryApi from '../api/grocery';
+import AppUserBar from "../components/AppUserBar";
+import groceryApi from "../api/grocery";
+
 
 const ProductPage = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    groceryApi  
+    groceryApi
       .get(`product/all`)
       .then((response) => {
         let data = response.data;
@@ -35,42 +31,64 @@ const ProductPage = () => {
       })
       .catch((err) => console.log(err));
   }, []);
+  // const [product, setProduct] = useState({ productName: "",price:"" });
+
+  // const addproductApi = (event) => {
+  //   event.preventDefault();
+  //   console.log(product);
+  //   groceryApi
+  //     .post("/cart", { productName: product.productName })
+
+  //     .then((response) => {
+  //       if (response.data.data) {
+  //   Navigate("/cart");
+          // alert("success");
+          // handleClose();
+  //       } else if (response.data.error) {
+  //         console.log(response.data.error.message);
+  //       } else {
+  //         console.log("Something went wrong");
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.log("Something went wrong");
+  //     });
+  // };
   return (
     <div>
-       <>
-      <AppBody>
-        <AppUserBar />
-        <Container>
-          <Row>
-            <Col>
-              <Stack gap={3} className="mt-5">
-                {/* <Title title="Products" /> */}
-                <Container>
-                  <Row>
-                    {products.map((product, index) => {
-                      return (
-                        <Col md={3}>
-                          <ProductItem
-                            image={product.image}
-                            name={product.productName}
-                            price={product.price}
-                          />
-                        </Col>
-                      );
-                    })}
-                  </Row>
-                </Container>
-              </Stack>
-            </Col>
-          </Row>
-        </Container>
-      </AppBody>
+      <>
+        <AppBody>
+          <AppUserBar />
+          <Container>
+            <Row>
+              <Col>
+                <Stack gap={3} className="mt-5">
+                  {/* <Title title="Products" /> */}
+                  <Container>
+                    <Row>
+                      {products.map((product, index) => {
+                        return (
+                          <Col md={3}>
+                            <ProductItem
+                              image={product.image}
+                              name={product.productName}
+                              price={product.price}
+                            />
+                          </Col>
+                        );
+                      })}
+                    </Row>
+                  </Container>
+                </Stack>
+              </Col>
+            </Row>
+          </Container>
+        </AppBody>
 
-      <Footer />
-    </>
-
+        <Footer />
+      </>
     </div>
-  )
-}
+  );
+};
 
-export default ProductPage
+export default ProductPage;

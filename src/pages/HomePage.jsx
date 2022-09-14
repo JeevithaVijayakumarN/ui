@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import AppBar from "../components/AppBar";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -20,19 +20,35 @@ import AppBody from "../components/AppBody";
 import ProductOne from "../assets/images/groceries.jpg";
 
 import Footer from "../components/Footer";
-
-
+import ProductPage from "./ProductPage";
+import groceryApi from "../api/grocery";
 
 const HomePage = () => {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    groceryApi
 
-  const products = [
-    { image: ProductOne, name: "Grocery", price: 100 },
-    { image: ProductOne, name: "Grocery", price: 100 },
-    { image: ProductOne, name: "Grocery", price: 100 },
-    { image: ProductOne, name: "Grocery", price: 100 },
-    { image: ProductOne, name: "Grocery", price: 100 },
-
-  ];
+      .get(`product/all`)
+      .then((response) => {
+        let data = response.data;
+        if (data.data) {
+          console.log(data.data);
+          setProducts(data.data);
+        } else if (data.error) {
+          console.log(data.error.message);
+        } else {
+          console.log("Something went wrong");
+        }
+      })
+      .catch((err) => console.log(err));
+  }, []);
+  // const products = [
+  //   { image: ProductOne, name: "Grocery", price: 100 },
+  //   { image: ProductOne, name: "Grocery", price: 100 },
+  //   { image: ProductOne, name: "Grocery", price: 100 },
+  //   { image: ProductOne, name: "Grocery", price: 100 },
+  //   { image: ProductOne, name: "Grocery", price: 100 },
+  // ];
   return (
     <div>
       <AppBar />
@@ -42,8 +58,31 @@ const HomePage = () => {
           <Row>
             <Col>
               <Stack gap={3} className="mt-5">
-                {/* <Title title="Recommended Products" /> */}
+                {/* <Title title="Products" /> */}
                 <Container>
+                  <Row>
+                    {products.map((product, index) => {
+                      return (
+                        <Col md={3}>
+                          <ProductItem
+                            image={product.image}
+                            name={product.productName}
+                            price={product.price}
+                          />
+                        </Col>
+                      );
+                    })}
+                  </Row>
+                </Container>
+              </Stack>
+            </Col>
+          </Row>
+
+          {/* <Row>
+            <Col>
+              <Stack gap={3} className="mt-5"> */}
+          {/* <Title title="Recommended Products" /> */}
+          {/* <Container>
                   <Row>
                     {products.map((product, index) => {
                       return (
@@ -56,12 +95,11 @@ const HomePage = () => {
                         </Col>
                       );
                     })}
-                  </Row>
-                </Container>
+                  </Row> */}
+          {/* </Container>
               </Stack>
             </Col>
-          </Row>
-         
+          </Row> */}
         </Container>
       </AppBody>
       <Footer />

@@ -20,6 +20,7 @@ import AppBody from "../components/AppBody";
 import ProductOne from "../assets/images/groceries.jpg";
 
 import Footer from "../components/Footer";
+import ProductPage from './ProductPage';
 
 const UserHome = () => {
     const products = [
@@ -35,8 +36,8 @@ const UserHome = () => {
     <Carousels />
     <AppBody>
       <Container>
-      
-        <Row>
+     
+        {/* <Row>
           <Col>
             <Stack gap={3} className="mt-5">
               <Title title="Recommended Products" />
@@ -57,7 +58,8 @@ const UserHome = () => {
               </Container>
             </Stack>
           </Col>
-        </Row>
+        </Row> */}
+        
        
       </Container>
     </AppBody>

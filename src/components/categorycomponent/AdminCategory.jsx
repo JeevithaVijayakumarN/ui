@@ -1,13 +1,13 @@
-import React from 'react'
-import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Table from 'react-bootstrap/Table';
+import React from "react";
+import { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Table from "react-bootstrap/Table";
 
-import{Link} from "react-router-dom";
-import groceryApi from '../../api/grocery';
+import { Link } from "react-router-dom";
+import groceryApi from "../../api/grocery";
 
 const AdminCategory = () => {
-  const[categories,setCategories]=useState([]);
+  const [categories, setCategories] = useState([]);
   const [showAddForm, setshowAddForm] = useState(false);
 
   const deleteAPI = (event, id) => {
@@ -30,7 +30,7 @@ const AdminCategory = () => {
   // const CategoryPage = () => {
   //   const [categories, setCategories] = useState([]);
   //   useEffect(() => {
-  //     addCategoryApi  
+  //     addCategoryApi
   //       .add(`/categorypage`)
   //       .then((response) => {
   //         let data = response.data;
@@ -46,30 +46,35 @@ const AdminCategory = () => {
   //       .catch((err) => console.log(err));
   //   },
   //    []);
-     
+
   return (
     <div>
-      <div className='container mt-5'>
-        <div className='row'>
-          <div className='col-md-8 mx-auto'>
-{/* 
+      <div className="container mt-5">
+        <div className="row">
+          <div className="col-md-8 mx-auto">
+            {/* 
           </div>
         </div>
       </div> */}
-        <h1>Category</h1><Link to={"/addcategories"}><Button variant="info onClick={() => {
+            <h1>Category</h1>
+            <Link to={"/addcategories"}>
+              <Button
+                variant="info onClick={() => {
           setshowAddForm(true);
-        }}">Add</Button></Link>
-         <Table striped>
-
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Category Name</th>
-         
-        </tr>      
-      </thead>
-      <tbody>
-        {/* {categories.map((category,index)=>{
+        }}"
+              >
+                Add
+              </Button>
+            </Link>
+            <Table striped>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Category Name</th>
+                </tr>
+              </thead>
+              <tbody>
+                {/* {categories.map((category,index)=>{
           return(
           <>
 
@@ -84,19 +89,13 @@ const AdminCategory = () => {
           </>
            ) 
       } } */}
-
-      
-          
-      </tbody>
-
-
-     
-    </Table>
-    </div>
+              </tbody>
+            </Table>
+          </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AdminCategory
+export default AdminCategory;

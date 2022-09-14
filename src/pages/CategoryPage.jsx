@@ -14,11 +14,10 @@ import AppUserBar from "../components/AppUserBar";
 import { useEffect } from "react";
 import groceryApi from "../api/grocery";
 
-
 const CategoryPage = () => {
   const [categories, setCategories] = useState([]);
   useEffect(() => {
-    groceryApi  
+    groceryApi
       .get(`/category/all`)
       .then((response) => {
         let data = response.data;
@@ -32,10 +31,8 @@ const CategoryPage = () => {
         }
       })
       .catch((err) => console.log(err));
-  },
-   []);
-   
-  
+  }, []);
+
   return (
     <div>
       <>

@@ -4,9 +4,9 @@ const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
   const [loggedInUser, setLoggedInUser] = useState({
-    userId:0,
-    userName:"",
-    isLoggedIn:"true",
+    userId: 0,
+    userName: "",
+    isLoggedIn: "true",
   });
   const [contacts, setContacts] = useState([]);
 

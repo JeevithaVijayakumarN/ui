@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import Card from "react-bootstrap/Card";
 
 const CategoryItem = ({ image, name }) => {
-
   return (
     <Card className="bg-white text-white rounded my-2">
       <Card.Img src={image} alt="Card image" class="fitToContent w-100" />

@@ -1,6 +1,5 @@
 import React from "react";
-import Button from 'react-bootstrap/Button';
-
+import Button from "react-bootstrap/Button";
 
 import "../assets/images/css/history.css";
 import AppUserBar from "../components/AppUserBar";
@@ -40,7 +39,9 @@ const HistoryPage = () => {
                 <li className="left">Total Price:690</li>
               </ul>
             </div>
-            <Button variant="light "><a href="/">Back</a></Button>
+            <Button variant="light ">
+              <a href="/">Back</a>
+            </Button>
           </div>
         </div>
       </div>
