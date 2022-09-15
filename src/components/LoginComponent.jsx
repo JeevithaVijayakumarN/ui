@@ -5,11 +5,18 @@ import groceryApi from "../api/grocery";
 
 const LoginComponent = () => {
   const navigate = useNavigate();
-  const { setLoggedInUser } = useContext(UserContext);
+  const { loggedInUser, setLoggedInUser } = useContext(UserContext);
   const [login, setLogin] = useState({ name: "", password: "" });
 
   const loginAPI = (event) => {
     event.preventDefault();
+
+    console.log("dadaad");
+    console.log("dadaad");
+    console.log("dadaad");
+    console.log("dadaad");
+    console.log("dadaad");
+    console.log("dadaad");
 
     groceryApi
       .post(`/auth/login`, {
@@ -18,11 +25,22 @@ const LoginComponent = () => {
       })
       .then((res) => {
         console.log(res.data);
-        if (res.data.data) {
-          let loggedInUser = res.data.data;
+        console.log(res.data);
+        console.log(res.data);
+        console.log(res.data);
+        console.log(res.data);
+        if (res.data) {
+          let loggedInUser = res.data;
           loggedInUser.isLoggedIn = true;
+          loggedInUser.role = res.data;
           setLoggedInUser(loggedInUser);
-          navigate("/userpage");
+          console.log(res.data);
+          console.log(res.data);
+          console.log(res.data);
+          console.log(res.data);
+          if (res.data.data.userName === "admin") {
+            navigate("/admin");
+          } else navigate("/userpage");
         } else if (res.data.error) {
           console.log(res.data.error.message);
         } else {
@@ -72,7 +90,6 @@ const LoginComponent = () => {
               >
                 Login
               </button>
-              {/* onClick={(event) => loginAPI(event)} */}
             </form>
           </div>
         </div>

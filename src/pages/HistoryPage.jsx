@@ -9,9 +9,7 @@ const HistoryPage = () => {
     <>
       <AppUserBar />
       <div className="container d-flex justify-content-center mt-10">
-        {/* <h4 className="modal-title">
-          Adidas Yeezy Boost 350 V2 Limited Edition
-        </h4> */}
+       
 
         <div className="container mt-5">
           <h6>Item Details</h6>

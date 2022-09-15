@@ -42,13 +42,7 @@ const HomePage = () => {
       })
       .catch((err) => console.log(err));
   }, []);
-  // const products = [
-  //   { image: ProductOne, name: "Grocery", price: 100 },
-  //   { image: ProductOne, name: "Grocery", price: 100 },
-  //   { image: ProductOne, name: "Grocery", price: 100 },
-  //   { image: ProductOne, name: "Grocery", price: 100 },
-  //   { image: ProductOne, name: "Grocery", price: 100 },
-  // ];
+ 
   return (
     <div>
       <AppBar />
@@ -78,28 +72,7 @@ const HomePage = () => {
             </Col>
           </Row>
 
-          {/* <Row>
-            <Col>
-              <Stack gap={3} className="mt-5"> */}
-          {/* <Title title="Recommended Products" /> */}
-          {/* <Container>
-                  <Row>
-                    {products.map((product, index) => {
-                      return (
-                        <Col md={3}>
-                          <ProductItem
-                            image={product.image}
-                            name={product.name}
-                            price={product.price}
-                          />
-                        </Col>
-                      );
-                    })}
-                  </Row> */}
-          {/* </Container>
-              </Stack>
-            </Col>
-          </Row> */}
+         
         </Container>
       </AppBody>
       <Footer />

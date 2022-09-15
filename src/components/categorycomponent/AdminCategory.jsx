@@ -52,10 +52,7 @@ const AdminCategory = () => {
       <div className="container mt-5">
         <div className="row">
           <div className="col-md-8 mx-auto">
-            {/* 
-          </div>
-        </div>
-      </div> */}
+          
             <h1>Category</h1>
             <Link to={"/addcategories"}>
               <Button

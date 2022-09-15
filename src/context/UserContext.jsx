@@ -6,27 +6,14 @@ const UserProvider = ({ children }) => {
   const [loggedInUser, setLoggedInUser] = useState({
     userId: 0,
     userName: "",
-    isLoggedIn: "true",
+    isLoggedIn: "false",
   });
-  const [contacts, setContacts] = useState([]);
-
-  const searchContact = (userName) => {
-    return contacts.reduce((acc, curr) => {
-      if (curr.name === userName) {
-        acc = curr;
-      }
-      return acc;
-    }, {});
-  };
 
   return (
     <UserContext.Provider
       value={{
         loggedInUser,
         setLoggedInUser,
-        searchContact,
-        setContacts,
-        contacts,
       }}
     >
       {children}
